@@ -144,10 +144,22 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# REST Framework
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),
+    'DEFAULT_THROTTLE_CLASS': {
+        'rest_framework.throttling.UserRateThrottle'
+    },
+    'DEFAULT_THROTTLE_RATES': {
+        'user': '5/d',
+    }
 }
 
+# SESSION
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+# 세션 유지시간
 SESSION_COOKIE_AGE = 60 * 60 * 24
+# 브라우저 닫으면 세션 제거
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
