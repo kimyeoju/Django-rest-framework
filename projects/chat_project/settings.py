@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from datetime import timedelta
+from dotenv import load_dotenv
 
 # 앱 이름.클래스
 AUTH_USER_MODEL = 'user.User'
@@ -20,6 +21,8 @@ AUTH_USER_MODEL = 'user.User'
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(os.path.join(BASE_DIR, '.env'))
+APIKEY = os.getenv('OPENAI_API_KEY')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -41,7 +44,7 @@ OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 # Application definition
 
 INSTALLED_APPS = [
-    # basic apps
+    # 기본 앱
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -49,13 +52,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    # external apps
+    # 외부 앱
     'rest_framework',
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'corsheaders',
     
-    # installed apps
+    # 설치한 앱
     'chatbot',
     'user',
     
