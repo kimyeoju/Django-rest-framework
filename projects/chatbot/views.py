@@ -22,5 +22,6 @@ class ChatbotView(APIView):
             conversation = Conversation(
                 prompt=request_data, response=response, user=request.user)
             conversation.save()
+            print(conversation)
             return Response(response, status=status.HTTP_201_CREATED)
         return Response(status=status.HTTP_400_BAD_REQUEST)
