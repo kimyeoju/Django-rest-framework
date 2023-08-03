@@ -171,6 +171,7 @@ NAME|URL|
 ![chrome-capture-2023-7-3 (4)](https://github.com/kimyeoju/Django-rest-framework/assets/131739526/7c4bf1fe-fb6f-4181-9406-5cafefaace73)
 
 - 로그인(인증)된 user는 챗봇 서비스 요청을 하루에 5번으로 제한
+
 ``` Failed to resource: the server responded with a status of 429 (Too Many Requests) 오류가 뜸 ```
 
 - settings.py Throttle 코드
