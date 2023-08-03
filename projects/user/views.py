@@ -5,7 +5,7 @@ from rest_framework import status
 from .serializers import UserSerializer
 # Create your views here.
 
-
+# 로그인 내장된 기능 사용
 class Registration(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)

@@ -10,6 +10,7 @@ class RegisterForm(UserCreationForm):
         model = User # get_user_model()
         fields = ['email']
 
+
 class LoginForm(AuthenticationForm):
     
     class Meta:
